@@ -1,9 +1,0 @@
-{
-    "RequiredExtensionVersion": 59,
-    "ModTable": "AnacronicaNoAutoEndTurn",
-    "FeatureFlags": [
-        "OsirisExtensions",
-        "Lua",
-		"Preprocessor"
-    ]
-}
