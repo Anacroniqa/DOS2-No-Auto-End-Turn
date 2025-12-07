@@ -1,0 +1,128 @@
+Version 1
+SubGoalCombiner SGC_AND
+INITSECTION
+
+KBSECTION
+//JUST IN CASE
+//Players
+IF
+CharacterUsedItemTemplate(_Character, "FUR_Humans_Camping_Sleepingbag_B_4d7216c9-c21e-4ab0-b98e-97d744798912", _Item)
+AND
+CharacterIsControlled(_Character, 1)
+AND
+CharacterIsInCombat(_Character, 0)
+AND
+DB_IsPlayer(_PartyMember)
+AND
+NOT DB_Origins(_PartyMember)
+AND
+CharacterIsInCombat(_PartyMember, 0)
+AND
+IsTagged((CHARACTERGUID)_PartyMember, "ANAET_HasFakeAP", 1)
+AND
+NRD_CharacterGetPermanentBoostInt(_Character, "APCostBoost", _APBoost)
+AND
+IntegerSubtract(_APBoost, 1, _NewAPBoost)
+THEN
+ClearTag((CHARACTERGUID)_PartyMember, "ANAET_HasFakeAP");
+NRD_CharacterSetPermanentBoostInt(_PartyMember, "APCostBoost", _NewAPBoost);
+CharacterAddAttribute(_PartyMember, "Dummy", 0);
+
+IF
+CharacterUsedItemTemplate(_Character, "FUR_Humans_Camping_Sleepingbag_B_4d7216c9-c21e-4ab0-b98e-97d744798912", _Item)
+AND
+CharacterIsControlled(_Character, 1)
+AND
+CharacterIsInCombat(_Character, 0)
+AND
+DB_IsPlayer(_PartyMember)
+AND
+NOT DB_Origins(_PartyMember)
+AND
+CharacterIsInCombat(_PartyMember, 0)
+AND
+HasActiveStatus((CHARACTERGUID)_PartyMember, "ANAET_HasFakeAP", 1)
+THEN
+RemoveStatus((CHARACTERGUID)_PartyMember, "ANAET_HasFakeAP");
+
+//Origins
+IF
+CharacterUsedItemTemplate(_Character, "FUR_Humans_Camping_Sleepingbag_B_4d7216c9-c21e-4ab0-b98e-97d744798912", _Item)
+AND
+CharacterIsControlled(_Character, 1)
+AND
+CharacterIsInCombat(_Character, 0)
+AND
+DB_Origins(_PartyMember)
+AND
+CharacterIsInCombat(_PartyMember, 0)
+AND
+IsTagged((CHARACTERGUID)_PartyMember, "ANAET_HasFakeAP", 1)
+AND
+NRD_CharacterGetPermanentBoostInt(_Character, "APCostBoost", _APBoost)
+AND
+IntegerSubtract(_APBoost, 1, _NewAPBoost)
+THEN
+ClearTag((CHARACTERGUID)_PartyMember, "ANAET_HasFakeAP");
+NRD_CharacterSetPermanentBoostInt(_PartyMember, "APCostBoost", _NewAPBoost);
+CharacterAddAttribute(_PartyMember, "Dummy", 0);
+
+IF
+CharacterUsedItemTemplate(_Character, "FUR_Humans_Camping_Sleepingbag_B_4d7216c9-c21e-4ab0-b98e-97d744798912", _Item)
+AND
+CharacterIsControlled(_Character, 1)
+AND
+CharacterIsInCombat(_Character, 0)
+AND
+DB_Origins(_PartyMember)
+AND
+CharacterIsInCombat(_PartyMember, 0)
+AND
+HasActiveStatus((CHARACTERGUID)_PartyMember, "ANAET_HasFakeAP", 1)
+THEN
+RemoveStatus((CHARACTERGUID)_PartyMember, "ANAET_HasFakeAP");
+
+//StoryNPC
+IF
+CharacterUsedItemTemplate(_Character, "FUR_Humans_Camping_Sleepingbag_B_4d7216c9-c21e-4ab0-b98e-97d744798912", _Item)
+AND
+CharacterIsControlled(_Character, 1)
+AND
+CharacterIsInCombat(_Character, 0)
+AND
+DB_IsStoryNpc(_PartyMember)
+AND
+NOT DB_Origins(_PartyMember)
+AND
+CharacterIsInCombat(_PartyMember, 0)
+AND
+IsTagged((CHARACTERGUID)_PartyMember, "ANAET_HasFakeAP", 1)
+AND
+NRD_CharacterGetPermanentBoostInt(_Character, "APCostBoost", _APBoost)
+AND
+IntegerSubtract(_APBoost, 1, _NewAPBoost)
+THEN
+ClearTag((CHARACTERGUID)_PartyMember, "ANAET_HasFakeAP");
+NRD_CharacterSetPermanentBoostInt(_PartyMember, "APCostBoost", _NewAPBoost);
+CharacterAddAttribute(_PartyMember, "Dummy", 0);
+
+IF
+CharacterUsedItemTemplate(_Character, "FUR_Humans_Camping_Sleepingbag_B_4d7216c9-c21e-4ab0-b98e-97d744798912", _Item)
+AND
+CharacterIsControlled(_Character, 1)
+AND
+CharacterIsInCombat(_Character, 0)
+AND
+DB_IsStoryNpc(_PartyMember)
+AND
+NOT DB_Origins(_PartyMember)
+AND
+CharacterIsInCombat(_PartyMember, 0)
+AND
+HasActiveStatus((CHARACTERGUID)_PartyMember, "ANAET_HasFakeAP", 1)
+THEN
+RemoveStatus((CHARACTERGUID)_PartyMember, "ANAET_HasFakeAP");
+
+EXITSECTION
+
+ENDEXITSECTION
