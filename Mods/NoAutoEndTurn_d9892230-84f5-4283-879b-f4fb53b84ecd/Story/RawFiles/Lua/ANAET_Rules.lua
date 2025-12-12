@@ -24,7 +24,7 @@ local function CleanAfterTurn(_Character) --Clean entries and Fake APs after tur
         if not TimeWrapped then
             CharacterAddActionPoints(_Character, -99) --It is ABSOLUTELY NECESSARY to remove more APs than the character maximum APs to prevent errors with the last character of the round
         else
-            CharacterAddActionPoints(_Character, -1)
+            CharacterAddActionPoints(_Character, -1) --Necessary for Fane's Time Wrap to work properly
         end
         RemoveStatus(_Character, "ANAET_HasFakeAP")
     end
@@ -122,4 +122,5 @@ local function MovementAdjustment(event) --To remove the paralized status and an
         end
     end
 end
+
 Ext.Events.StatusDelete:Subscribe(MovementAdjustment)
