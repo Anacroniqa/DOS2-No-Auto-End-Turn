@@ -1,6 +1,0 @@
-
-
-### Compile("C:/Program Files (x86)/Steam/steamapps/common/Divinity Original Sin 2/DefEd/Data/Mods/NoAutoEndTurn_d9892230-84f5-4283-879b-f4fb53b84ecd\Story/story.div","r+")
-DeleteAllData
-
-0 error(s), 0 warning(s). Compilation ended.
